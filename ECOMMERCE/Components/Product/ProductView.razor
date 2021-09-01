@@ -1,0 +1,53 @@
+﻿@page "/product/{id}"
+@inherits ProductViewBase
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            left side bar
+        </div>
+        <div class="col-6">
+            <div class="row">
+                @foreach (var prod in product)
+                {
+                    var image = prod.Image.Where(i => i.ProductId == prod.Id).FirstOrDefault();
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="ProductImage/@image.ProductImagePath" class="img-fluid" alt="ProductImage" style="height:350px;width:auto;">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 border-1">
+
+                                <small class="small text-sm-start fw-bold">@prod.Name</small><br />
+                                <small class="small">Selling Price: @prod.Price</small><br />
+                                <small class="small">Discounted Price: @prod.SalePrice</small>
+                            </div>
+                            <div class="col-4 border-1">
+                                <small class="small text-sm-start fw-bold">@prod.Name</small><br />
+                                <small class="small">Selling Price: @prod.Price</small><br />
+                                <small class="small">Discounted Price: @prod.SalePrice</small>
+                            </div>
+                            <div class="col-4 border-1">
+                                <a href="/" class="btn btn-primary btn-sm">Back</a><br />
+                                <button class="btn btn-primary btn-sm" @onclick="createCart">Add To Cart</button><br />
+                                <a href="/cart" class="btn btn-primary btn-sm" @attributes-style="ViewCartButtonClass">View Cart</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 border-1">
+                                <p class="text-sm-start">@prod.LongDescription</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div class="col-3">
+            right side bar
+        </div>
+    </div>
+
+</div>

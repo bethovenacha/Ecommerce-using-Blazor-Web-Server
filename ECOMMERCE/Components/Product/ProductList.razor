@@ -1,0 +1,21 @@
+﻿@page "/productList"
+@inherits ProductListBase
+
+@foreach (var product in Products)
+{
+    <div class="col-4">
+        <div class="card">
+            @{
+                var image = product.Image.FirstOrDefault(i => i.ImageStatus == "Primary" && i.ProductId == product.Id);
+            }
+            <img src="ProductImage/@image.ProductImagePath" class="card-img-top" alt="ProductImage">
+
+            <div class="card-body">
+                <h5 class="card-title">@product.Name</h5>
+                <p class="card-text">@product.ShortDescription</p>
+                <a href="@($"product/{product.Id}")" class="btn btn-primary">View</a>
+              
+            </div>
+        </div>
+    </div>
+}
