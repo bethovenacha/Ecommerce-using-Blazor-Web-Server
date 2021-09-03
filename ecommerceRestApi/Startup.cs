@@ -31,8 +31,9 @@ namespace ecommerceRestApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => 
-                     options.UseSqlServer(Configuration.GetConnectionString("dbconnection"))
+                     options.UseSqlServer(Configuration.GetConnectionString("dbconnection"))                   
                      );
+            
             //You need to download Microsoft.AspNetcore.NewtonSoft
             services.AddControllersWithViews()
                  .AddNewtonsoftJson(options =>

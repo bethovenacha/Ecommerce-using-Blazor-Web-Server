@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ECOMMERCE.Components.Product
 {
-    public class ProductViewBase : ComponentBase
+    public class ProductViewBase : ComponentBase, IDisposable
     {
         [Inject]
         public Iproduct iProduct { get; set; }
@@ -17,34 +17,39 @@ namespace ECOMMERCE.Components.Product
         public Icart ICart { get; set; }
         [Inject]
         public ProtectedLocalStorage ProtectedLocalStore { get; set; }
+        [Inject]
+        public CartState cartState { get; set; }
         [Parameter]
         public string Id { get; set; }//product id from the query string
         public List<Amarket.Product> product { get; set; } = new List<Amarket.Product>();
 
-        public Guid _CartId { get; set; } 
+        public Guid _CartId { get; set; } = Guid.NewGuid();
         public string ViewCartButtonClass { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            product = (List<Amarket.Product>)await iProduct.retrieveById(Guid.Parse(Id));     
-            ViewCartButtonClass = "none;";       
+            product = (List<Amarket.Product>)await iProduct.retrieveById(Guid.Parse(Id));
+            cartState.StateChanged += async (Source, property) => await CartState_StateChanged(Source, property);
+            ViewCartButtonClass = "none;";
         }
 
-        protected override Task OnAfterRenderAsync(bool firstRender)
+
+        protected override async Task OnParametersSetAsync()
         {
-            if (firstRender) {
-                _CartId = Guid.NewGuid();
-                ProtectedLocalStore.SetAsync("CartId", _CartId);
+            await ProtectedLocalStore.SetAsync("CartId", _CartId);
+
+        }
+
+        private async Task CartState_StateChanged(ComponentBase source, object property) {
+            if (source != this) {
+                await InvokeAsync(StateHasChanged);
             }
-            return base.OnAfterRenderAsync(firstRender);
         }
 
 
         protected async Task<Amarket.Cart> createCart()
         {
-            var id = await ProtectedLocalStore.GetAsync<Guid>("CartId");
-
-           
+            var id = await ProtectedLocalStore.GetAsync<Guid>("CartId");     
             Amarket.Cart cart = new Amarket.Cart()
             {
                 Id = Guid.NewGuid(),
@@ -62,6 +67,14 @@ namespace ECOMMERCE.Components.Product
             return await ICart.create(cart);
             
         }
+
+        public void Dispose()
+        {
+            cartState.StateChanged += async (Source, property) => await CartState_StateChanged(Source, property);
+        }
+
+        //public event Action OnChange;
+        //public void NotifyStateChanged() => OnChange?.Invoke();
 
 
     }
