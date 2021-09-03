@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\ECOMMERCE\\ECOMMERCE.csproj": {}
+    "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\ECOMMERCE\\ECOMMERCE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\Amarket\\Amarket.csproj": {
+    "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\Amarket\\Amarket.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\Amarket\\Amarket.csproj",
+        "projectUniqueName": "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\Amarket\\Amarket.csproj",
         "projectName": "Amarket",
-        "projectPath": "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\Amarket\\Amarket.csproj",
+        "projectPath": "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\Amarket\\Amarket.csproj",
         "packagesPath": "C:\\Users\\Ivy Acha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\Amarket\\obj\\",
+        "outputPath": "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\Amarket\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -61,14 +61,14 @@
         }
       }
     },
-    "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\ECOMMERCE\\ECOMMERCE.csproj": {
+    "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\ECOMMERCE\\ECOMMERCE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\ECOMMERCE\\ECOMMERCE.csproj",
+        "projectUniqueName": "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\ECOMMERCE\\ECOMMERCE.csproj",
         "projectName": "ECOMMERCE",
-        "projectPath": "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\ECOMMERCE\\ECOMMERCE.csproj",
+        "projectPath": "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\ECOMMERCE\\ECOMMERCE.csproj",
         "packagesPath": "C:\\Users\\Ivy Acha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\ECOMMERCE\\obj\\",
+        "outputPath": "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\ECOMMERCE\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -88,8 +88,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\Amarket\\Amarket.csproj": {
-                "projectPath": "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\Amarket\\Amarket.csproj"
+              "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\Amarket\\Amarket.csproj": {
+                "projectPath": "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\Amarket\\Amarket.csproj"
               }
             }
           }

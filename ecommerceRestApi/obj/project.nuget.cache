@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5k+8xVXVmJKYMWOXK2JxBcUtUKqnZbw9FCOdrz7YR8KnJMcbtrG7AOb9hUtD+QhHTrS6opw4BUXNaHL4KlQUNw==",
+  "dgSpecHash": "Q6d3JCJlzr8c5VIC0KPRyJPlRdxPKtvZXJzHkZ/wQRxO6vS3KTNOMTdVszkd3q/sYV5sK0n2kSGPKT400rXQgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\ecommerceRestApi\\ecommerceRestApi.csproj",
+  "projectFilePath": "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\ecommerceRestApi\\ecommerceRestApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ivy Acha\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Ivy Acha\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.2\\microsoft.aspnetcore.jsonpatch.3.1.2.nupkg.sha512",
