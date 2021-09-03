@@ -102,7 +102,7 @@ using Microsoft.AspNetCore.Components;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : NavMenuBase
+    public partial class NavMenu : ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
