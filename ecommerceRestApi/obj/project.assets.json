@@ -7267,11 +7267,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\ecommerceRestApi\\ecommerceRestApi.csproj",
+      "projectUniqueName": "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\ecommerceRestApi\\ecommerceRestApi.csproj",
       "projectName": "ecommerceRestApi",
-      "projectPath": "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\ecommerceRestApi\\ecommerceRestApi.csproj",
+      "projectPath": "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\ecommerceRestApi\\ecommerceRestApi.csproj",
       "packagesPath": "C:\\Users\\Ivy Acha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\ecommerceRestApi\\obj\\",
+      "outputPath": "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\ecommerceRestApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7291,8 +7291,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\Amarket\\Amarket.csproj": {
-              "projectPath": "C:\\Users\\Ivy Acha\\Desktop\\digoy\\PORTFOLIO\\ECOMMERCE\\ECOMMERCE\\Amarket\\Amarket.csproj"
+            "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\Amarket\\Amarket.csproj": {
+              "projectPath": "C:\\Users\\Ivy Acha\\Desktop\\localCopy\\Amarket\\Amarket.csproj"
             }
           }
         }
