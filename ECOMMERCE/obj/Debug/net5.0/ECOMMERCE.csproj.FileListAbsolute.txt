@@ -86,6 +86,7 @@ C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debu
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\Pages\LeftSideBar.razor.g.cs
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\Pages\NavigationMenu.razor.g.cs
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\Pages\RightSideBar.razor.g.cs
+C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\Shared\StateProvider.razor.g.cs
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
@@ -102,6 +103,7 @@ C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debu
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\Razor\Pages\LeftSideBar.razor.g.cs
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\Razor\Pages\NavigationMenu.razor.g.cs
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\Razor\Pages\RightSideBar.razor.g.cs
+C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\Razor\Shared\StateProvider.razor.g.cs
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ECOMMERCE\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs

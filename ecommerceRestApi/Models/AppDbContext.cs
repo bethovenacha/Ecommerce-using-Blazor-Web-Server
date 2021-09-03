@@ -150,6 +150,115 @@ namespace ecommerceRestApi.Models
              .Property(i => i.StatusId).HasColumnType("uniqueidentifier").IsRequired(true);
             modelBuilder.Entity<Order>().HasIndex("StatusId").IsUnique(false);
 
+            ProductCategory pc = new ProductCategory() { 
+                Id= Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e5"),
+                CategoryName = "Top Human Wear"
+            };
+            ProductCategory pc1 = new ProductCategory()
+            {
+                Id = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e6"),
+                CategoryName = "Bottom Human Wear"
+            };
+            ProductCategory pc2 = new ProductCategory()
+            {
+                Id = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e7"),
+                CategoryName = "Under Human Wear"
+            };
+
+            //PRODUCT CATEGORY DATA
+            modelBuilder.Entity<ProductCategory>().HasData(pc);
+            modelBuilder.Entity<ProductCategory>().HasData(pc1);
+            modelBuilder.Entity<ProductCategory>().HasData(pc2);
+
+            ProductSubCategory psc = new ProductSubCategory()
+            {
+                Id = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9d2"),
+                CategoryId = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e5"),
+                SubCategoryName = "Polo"
+            };
+            ProductSubCategory psc2 = new ProductSubCategory()
+            {
+                Id = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9d1"),
+                CategoryId = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e5"),
+                SubCategoryName ="T-Shirt"
+            };
+
+            //PRODUCT SUBCATEGORY DATA
+            modelBuilder.Entity<ProductSubCategory>().HasData(psc);
+            modelBuilder.Entity<ProductSubCategory>().HasData(psc2);
+
+            ProductStatus ps = new ProductStatus() {
+                Id = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e5"),
+                Status = "New Arrival"           
+            };
+            ProductStatus ps2 = new ProductStatus()
+            {
+                Id = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e6"),
+                Status = "New"
+            };
+            //PRODUCT STATUS DATA
+            modelBuilder.Entity<ProductStatus>().HasData(ps);
+            modelBuilder.Entity<ProductStatus>().HasData(ps2);
+
+            Product product1 = new Product()
+            {
+                Id = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e2"),
+                Name = "Green Polo Long Sleeve",
+                Quantity = 100,
+                Price = 200,
+                SalePrice = 150,
+                Brand = "Nike",
+                ShortDescription = "Plain Green Polo long Sleeve",
+                LongDescription = "100 % cotton absorbent, easy to dry shirt.",
+                SKU = "SampleSKU",
+                Barcode = "12341234234",
+                ProductStatusId = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e5"),
+                ProductCategoryId = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e5"),
+                ProductSubCategoryId = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9d2")
+
+            };
+
+            Product product2 = new Product()
+            {
+                Id = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e5"),
+                Name = "Plain White T-Shirt",
+                Quantity = 100,
+                Price = 200,
+                SalePrice = 150,
+                Brand = "Nike",
+                ShortDescription = "Plain White T-shirt Round Neck",
+                LongDescription = "100 % cotton absorbent, easy to dry shirt.",
+                SKU = "SampleSKUWhite",
+                Barcode = "12341234234324234",
+                ProductStatusId = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e6"),
+                ProductCategoryId = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e5"),
+                ProductSubCategoryId = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9d1")
+            };
+
+            //PRODUCT DATA
+            modelBuilder.Entity<Product>().HasData(product1);
+            modelBuilder.Entity<Product>().HasData(product2);
+
+
+            ProductImage pi = new ProductImage() { 
+                Id = Guid.NewGuid(),
+                ProductId = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e2"),
+                ProductImagePath = "greenPolo.jpg",
+                ImageStatus = "Primary"
+            };
+
+            ProductImage pi2 = new ProductImage()
+            {
+                Id = Guid.NewGuid(),
+                ProductId = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e5"),
+                ProductImagePath = "shirt.png",
+                ImageStatus = "Primary"
+            };
+
+            //PRODUCT DATA
+            modelBuilder.Entity<ProductImage>().HasData(pi);
+            modelBuilder.Entity<ProductImage>().HasData(pi2);
+
         }
 
 
