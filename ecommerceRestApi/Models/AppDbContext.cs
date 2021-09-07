@@ -150,6 +150,18 @@ namespace ecommerceRestApi.Models
              .Property(i => i.StatusId).HasColumnType("uniqueidentifier").IsRequired(true);
             modelBuilder.Entity<Order>().HasIndex("StatusId").IsUnique(false);
 
+            User u = new User()
+            {
+                Id = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e2"),
+                FirstName = "John",
+                LastName = "Wick",
+                MiddleInitial = "F",
+                Address = "New York Continental Hotel",
+                ContactNumber = "+639772188156",
+                DeliveryNotes = "Text or call when you arrive."
+            };
+            modelBuilder.Entity<User>().HasData(u);
+
             ProductCategory pc = new ProductCategory() { 
                 Id= Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e5"),
                 CategoryName = "Top Human Wear"
