@@ -6,7 +6,14 @@ Instruction: <br>
 1. Pull this project using git pull and the name of the repository or download the .zip file<br>
 2. Open the project and go to package manager console<br>
 3. Type update-database SeedData to create the database with sample data.<br>
-4. Run the project, if the products are not displayed, kindly refresh the page.
+4. If the products are not displayed, make sure to match the port number of your machine to what is specified in the startup.cs file of the ecommerce folder.<br>
+
+e.g. In this example, the port number is 44311<br>
+	    services.AddHttpClient<Iproduct, ProductService>(client => {<br>
+                client.BaseAddress = new Uri("https://localhost:44311/");<br>
+            });<br>
+
+5. Build, rebuild, and run the project.
 
 <br>
 https://github.com/bethovenacha/Ecommerce-using-Blazor-Web-Server.git
