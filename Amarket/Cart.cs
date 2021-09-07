@@ -30,5 +30,7 @@ namespace Amarket
 
         public double Total { get; set; }
         public Order Order { get; set; }
+
+       
     }
 }

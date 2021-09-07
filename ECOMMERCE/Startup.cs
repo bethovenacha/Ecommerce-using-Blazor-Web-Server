@@ -31,16 +31,14 @@ namespace ECOMMERCE
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-
-            services.AddScoped<CartState>();
-
             services.AddHttpClient<Iproduct, ProductService>(client => {
                 client.BaseAddress = new Uri("https://localhost:44311/");
             });
             services.AddHttpClient<Icart, CartService>(client => {
                 client.BaseAddress = new Uri("https://localhost:44311/");
             });
-           
+            services.AddScoped<CartState>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

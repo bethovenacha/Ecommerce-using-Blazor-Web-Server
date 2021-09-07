@@ -20,17 +20,21 @@ namespace ecommerceRestApi.Controllers
             this.context = _context;
             unit = new UnitOfWork<Cart>(this.context);
         }
-        public async Task<ActionResult> GetCart(Guid id)
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult> GetCart(string id)
         {
             try
-            {
-                return Ok(await unit.repository.retrieve());
+            {               
+                return Ok(await unit.repository.retrieve(c => c.CartId == Guid.Parse(id), null, "Products"));
             }
             catch (Exception ex)
             {
                 return NotFound(ex.Message);
             }
         }
+
+        
         [HttpPost]
         public async Task<ActionResult<Cart>> CreateCart(Cart cart)
         {

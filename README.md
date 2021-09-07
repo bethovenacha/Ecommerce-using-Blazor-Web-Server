@@ -7,3 +7,6 @@ Instruction: <br>
 2. Open the project and go to package manager console<br>
 3. Type update-database SeedData to create the database with sample data.<br>
 4. Run the project, if the products are not displayed, kindly refresh the page.
+
+<br>
+https://github.com/bethovenacha/Ecommerce-using-Blazor-Web-Server.git

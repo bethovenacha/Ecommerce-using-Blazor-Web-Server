@@ -33,9 +33,10 @@ namespace ECOMMERCE.Services.Cart
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Amarket.Cart>> retrieveById(object id)
+        public async Task<IEnumerable<Amarket.Cart>> retrieveById(object id)
         {
-            throw new NotImplementedException();
+            return await httpClient.GetJsonAsync<IEnumerable<Amarket.Cart>>($"api/cart/{id}");
+            
         }
 
         public Task<Amarket.Cart> update(Amarket.Cart cart)

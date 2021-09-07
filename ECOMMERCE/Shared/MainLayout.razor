@@ -1,5 +1,15 @@
-﻿@inherits LayoutComponentBase
+﻿ @inherits LayoutComponentBase
 
-<div class="page">
-    @Body
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <ECOMMERCE.Pages.NavigationMenu />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            @Body
+        </div>
+    </div>
+   
 </div>
