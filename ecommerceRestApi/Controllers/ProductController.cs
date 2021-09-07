@@ -40,7 +40,7 @@ namespace ecommerceRestApi.Controllers
         public async Task<ActionResult> GetProduct(Guid id) {
             try
             {
-                return Ok(await unit.repository.retrieve(p=>p.Id==id,null, "Image"));
+                return Ok(await unit.repository.retrieve(p=>p.Id==id,null, "Image,Category,ProductSubCategory,Status"));
             }
             catch (Exception ex)
             {

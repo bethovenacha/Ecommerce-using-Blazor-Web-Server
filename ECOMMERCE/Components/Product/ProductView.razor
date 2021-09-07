@@ -1,49 +1,56 @@
 ﻿@page "/product/{id}"
 @inherits ProductViewBase
 
-<div class="container-fluid">
-    <div class="row">
-        
-        <div class="col-6">
-            <div class="row">
-                @foreach (var prod in product)
-                {
-                    var image = prod.Image.Where(i => i.ProductId == prod.Id).FirstOrDefault();
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-12">
-                                <img src="ProductImage/@image.ProductImagePath" class="img-fluid" alt="ProductImage" style="height:350px;width:auto;">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4 border-1">
-
-                                <small class="small text-sm-start fw-bold">@prod.Name</small><br />
-                                <small class="small">Selling Price: @prod.Price</small><br />
-                                <small class="small">Discounted Price: @prod.SalePrice</small>
-                            </div>
-                            <div class="col-4 border-1">
-                                <small class="small text-sm-start fw-bold">@prod.Name</small><br />
-                                <small class="small">Selling Price: @prod.Price</small><br />
-                                <small class="small">Discounted Price: @prod.SalePrice</small>
-                            </div>
-                            <div class="col-4 border-1">
-                                <a href="/" class="btn btn-primary btn-sm">Back</a><br />
-                                <button class="btn btn-primary btn-sm" @onclick="createCart">Add To Cart</button><br />
-                                <a href="/cart" class="btn btn-primary btn-sm" @attributes-style="ViewCartButtonClass">View Cart</a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 border-1">
-                                <p class="text-sm-start">@prod.LongDescription</p>
-                            </div>
-                        </div>
-                    </div>
-                }
-
+<div class="row">
+    @foreach (var prod in product)
+    {
+        var image = prod.Image.Where(i => i.ProductId == prod.Id).FirstOrDefault();
+        <div class="col-lg-6">
+            <div class="m-3 p-1">
+                <img src="ProductImage/@image.ProductImagePath" class="img-fluid" alt="ProductImage" style="height:500px;width:auto;">
             </div>
         </div>
-       
-    </div>
+        <div class="col-lg-6">
+            <div class="m-3 bg-secondary text-white p-1">
+                <div>
+                    <label class="fw-bold" for="productName">Name:</label>
+                    <label class="fw-lighter" id="productName">@prod.Name</label>
+                </div>
+                <div>
+                    <label class="fw-bold" for="productPrice">Price:</label>
+                    <label class="fw-lighter" id="productPrice">@prod.Price</label>
+                </div>
+                <div>
+                    <label class="fw-bold" for="produtsaleprice">Sale Price:</label>
+                    <label class="fw-lighter" id="produtsaleprice">@prod.SalePrice</label>
+                </div>
+            </div>
 
+            <div class="m-3 bg-secondary text-white p-1">
+                <div>
+                    <label class="fw-bold" for="productStatus">Status:</label>
+                    <label class="fw-lighter" id="productStatus">@prod.Status.Status</label>
+                </div>
+                <div>
+                    <label class="fw-bold" for="productCategory">Category:</label>
+                    <label class="fw-lighter" id="productCategory">@prod.Category.CategoryName</label>
+                </div>
+                <div>
+                    <label class="fw-bold" for="productSubCategory">Sub Category:</label>
+                    <label class="fw-lighter" id="productSubCategory">@prod.ProductSubCategory.SubCategoryName</label>
+                </div>
+            </div>
+            <div class="m-3 bg-secondary text-white p-1">
+                <label class="fw-bold" for="Description">Description:</label>
+                <p id="Description">@prod.LongDescription</p>
+            </div>
+            <div class="m-3 bg-dark text-white p-2">
+                <a href="/" class="btn btn-success btn-sm d-inline-block form-control">Back</a><br />
+                <button class="btn btn-danger btn-sm d-inline-block form-control" @onclick="createCart">Add To Cart</button><br />
+                <a href="@($"cart/{cartId}")" class="btn btn-success btn-sm d-inline-block form-control">View Cart</a>
+            </div>
+
+        </div>
+        
+    }
 </div>

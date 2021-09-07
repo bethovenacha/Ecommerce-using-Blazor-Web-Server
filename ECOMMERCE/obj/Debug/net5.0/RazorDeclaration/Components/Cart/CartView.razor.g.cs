@@ -102,6 +102,7 @@ using Microsoft.AspNetCore.Components;
 #line default
 #line hidden
 #nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/cart/{id}")]
     [Microsoft.AspNetCore.Components.RouteAttribute("/cart")]
     public partial class CartView : CartViewBase
     {
