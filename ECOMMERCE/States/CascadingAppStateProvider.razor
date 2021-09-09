@@ -19,6 +19,7 @@
     public async Task SaveChangesAsync()
     {
         await localStorage.SetAsync(cartState.key, cartState.CartId);
+        await localStorage.SetAsync("mainCart", cartState.Cart);
     }
 
     protected override  Task OnInitializedAsync()
@@ -34,6 +35,12 @@
         {
             cartState.SetCartId(this, result.Value);
 
+        }
+
+        var mainCart = await localStorage.GetAsync<List<Cart>>("mainCart");
+       
+        if (mainCart.Success) {
+            cartState.SetCart(this, mainCart.Value);
         }
         hasLoaded = true;
     }

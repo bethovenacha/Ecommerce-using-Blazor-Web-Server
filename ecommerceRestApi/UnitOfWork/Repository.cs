@@ -33,9 +33,10 @@ namespace ecommerceRestApi.UnitOfWork
         public virtual async Task<TEntity> delete(object id)
         {
             var result = await dbset.FindAsync(id);
-            if (result != null) {
+            if (result != null)
+            {
                 _context.Entry(result).State = EntityState.Deleted;
-                await _context.SaveChangesAsync();  
+                await _context.SaveChangesAsync();
             }
             return result;
         }

@@ -34,7 +34,20 @@ namespace ecommerceRestApi.Controllers
             }
         }
 
-        
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteCart(string id)
+        {
+            try
+            {    
+               return Ok(await unit.repository.delete(Guid.Parse(id)));
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+
         [HttpPost]
         public async Task<ActionResult<Cart>> CreateCart(Cart cart)
         {

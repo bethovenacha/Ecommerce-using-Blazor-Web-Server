@@ -19,8 +19,7 @@ namespace ECOMMERCE.Components.Product
         [Inject]
         public ProtectedLocalStorage ProtectedLocalStore { get; set; }
         [Inject]
-
-        
+                
         [CascadingParameter]
         public static CascadingAppStateProvider State { get; set; } = new CascadingAppStateProvider();
 
@@ -31,12 +30,15 @@ namespace ECOMMERCE.Components.Product
 
         public Guid cartId { get; set; } = Guid.Empty;
 
+        public string ViewCartStyle { get; set; } = "";
+
+        [Inject]
+        public NavigationManager NavManager { get; set; }
         protected override async Task OnInitializedAsync()
         {
-            product = (List<Amarket.Product>)await iProduct.retrieveById(Guid.Parse(Id));
-            
+            product = (List<Amarket.Product>)await iProduct.retrieveById(Guid.Parse(Id));            
             State.cartState.StateChanged += async (Source, property) => await CartState_StateChanged(Source, property);
-           
+            ViewCartStyle = "display:none;";
         }
 
         private async Task CartState_StateChanged(ComponentBase source, object property) {
@@ -62,12 +64,23 @@ namespace ECOMMERCE.Components.Product
                     Quantity = 1,
                     UserId = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e2")
                 };
-           
+
+            ViewCartStyle = "display: inline-block;";
+
             return await ICart.create(cart);  
+        }
+
+        protected async Task ViewCart() {
+            var id = await ProtectedLocalStore.GetAsync<Guid>("CartId");
+            if (id.Success) {
+                NavManager.NavigateTo($"cart/{id.Value}");
+            }
+            
         }
 
         public void Dispose()
         {
+           
             State.cartState.StateChanged -= async (Source, property) => await CartState_StateChanged(Source, property);
         }
 

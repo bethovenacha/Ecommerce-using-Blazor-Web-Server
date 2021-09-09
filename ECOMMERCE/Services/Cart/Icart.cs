@@ -11,6 +11,6 @@ namespace ECOMMERCE.Services.Cart
         Task<IEnumerable<Amarket.Cart>> retrieveById(object id);
         Task<Amarket.Cart> create(Amarket.Cart cart);
         Task<Amarket.Cart> update(Amarket.Cart cart);
-        Task<Amarket.Cart> delete(object entity);
+        Task delete(object entity);
     }
 }
