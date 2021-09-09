@@ -8,6 +8,7 @@ namespace ECOMMERCE
 {
     public class CartState : ComponentBase
     {
+        public List<Amarket.Cart> Cart { get; set; } = new List<Amarket.Cart>();
         public Guid CartId { get; set; } = Guid.Empty;
 
         public  string key { get; set; } = "";
@@ -26,7 +27,10 @@ namespace ECOMMERCE
         }
 
         //public event StateChanged OnChange;
-
+        public void SetCart(ComponentBase source, List<Amarket.Cart> _cart) {
+            this.Cart = _cart;
+            NotifyStateChanged(source, _cart);
+        }
         public void SetCartId(ComponentBase source, object property)
         {
             this.CartId = Guid.Parse(property.ToString());

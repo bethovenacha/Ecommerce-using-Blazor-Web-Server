@@ -2,6 +2,7 @@
 @page "/cart"
 @inherits CartViewBase
 
+
 <div class="row">
     <div class="col-12">
         <h5 class="float-start">Cart</h5>
@@ -12,8 +13,8 @@
 <div class="row">
 
     <div class="col-12">
-        
-        @if (cart.Count > 0)
+
+        @if (State.cartState.Cart.Count > 0 && State.cartState.Cart != null)
         {
             <table class="table-bordered table-responsive table-primary table-striped">
                 <thead>
@@ -26,7 +27,7 @@
                         <th colspan="2">Action</th>
                     </tr>
                 </thead>
-                @foreach (var c in cart)
+                @foreach (var c in State.cartState.Cart)
                 {
                     <tbody>
                         <tr>
@@ -36,9 +37,10 @@
                             <td> @c.Tax </td>
                             <td>
                                 <input type="number" value="@c.Quantity" min="1" max="100" />
-                            </td>
+                            </td> 
                             <td>
-                                <button class="btn btn-outline-danger btn-sm">Delete</button>
+                                @*@onclick="()=> deleteProduct(c.Id)"*@
+                                <button type="button" class="btn btn-outline-danger btn-sm" id="@c.Id" @ref="ReferedCart" @onclick="returnId">Delete</button>
                             </td>
                             <td>
                                 <button class="btn btn-success btn-sm">Update</button>

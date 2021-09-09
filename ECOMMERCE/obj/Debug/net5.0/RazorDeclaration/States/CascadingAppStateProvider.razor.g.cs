@@ -69,35 +69,56 @@ using Microsoft.JSInterop;
 #nullable disable
 #nullable restore
 #line 9 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
-using ECOMMERCE;
+using ECOMMERCE.Components;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 10 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
-using ECOMMERCE.Shared;
+using ECOMMERCE.Services;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 11 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
-using Amarket;
+using ECOMMERCE.Pages;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 12 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
-using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+using ECOMMERCE.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 13 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
+using Amarket;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
 using Microsoft.AspNetCore.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
+using ECOMMERCE.States;
 
 #line default
 #line hidden
@@ -122,6 +143,7 @@ using Microsoft.AspNetCore.Components;
     public async Task SaveChangesAsync()
     {
         await localStorage.SetAsync(cartState.key, cartState.CartId);
+        await localStorage.SetAsync("mainCart", cartState.Cart);
     }
 
     protected override  Task OnInitializedAsync()
@@ -137,6 +159,12 @@ using Microsoft.AspNetCore.Components;
         {
             cartState.SetCartId(this, result.Value);
 
+        }
+
+        var mainCart = await localStorage.GetAsync<List<Cart>>("mainCart");
+       
+        if (mainCart.Success) {
+            cartState.SetCart(this, mainCart.Value);
         }
         hasLoaded = true;
     }

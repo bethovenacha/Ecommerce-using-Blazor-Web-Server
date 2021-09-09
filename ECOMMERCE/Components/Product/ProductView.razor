@@ -45,9 +45,9 @@
                 <p id="Description">@prod.LongDescription</p>
             </div>
             <div class="m-3 bg-dark text-white p-2">
-                <a href="/" class="btn btn-success btn-sm d-inline-block form-control">Back</a><br />
-                <button class="btn btn-danger btn-sm d-inline-block form-control" @onclick="createCart">Add To Cart</button><br />
-                <a href="@($"cart/{cartId}")" class="btn btn-success btn-sm d-inline-block form-control">View Cart</a>
+                <a href="/" class="btn btn-success btn-sm d-inline-block">Back</a><br />
+                <button class="btn btn-danger btn-sm d-inline-block" @onclick="createCart" >Add To Cart</button><br />
+                <button type="button" class="btn btn-success btn-sm" @bind-style="ViewCartStyle" @bind-style:event="onclick" @onmousedown="ViewCart">View Cart</button>
             </div>
 
         </div>
