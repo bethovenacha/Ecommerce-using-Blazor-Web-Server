@@ -46,14 +46,9 @@ namespace ecommerceRestApi.Migrations
                     b.Property<double>("Total")
                         .HasColumnType("float");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Carts");
                 });
@@ -263,14 +258,14 @@ namespace ecommerceRestApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("019b6a59-1d15-4af7-bea6-301311b22793"),
+                            Id = new Guid("c060ef7e-9bef-46d8-b759-fa3b66bfaac2"),
                             ImageStatus = "Primary",
                             ProductId = new Guid("160c3fad-0479-4e35-9cd9-06427c4bc9e2"),
                             ProductImagePath = "greenPolo.jpg"
                         },
                         new
                         {
-                            Id = new Guid("e8f4ba00-ccc9-473b-ae5d-bab4423f2ad2"),
+                            Id = new Guid("ec71cab4-11ce-4e33-bf1a-665163d88e19"),
                             ImageStatus = "Primary",
                             ProductId = new Guid("160c3fad-0479-4e35-9cd9-06427c4bc9e5"),
                             ProductImagePath = "shirt.png"
@@ -385,15 +380,7 @@ namespace ecommerceRestApi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Amarket.User", "User")
-                        .WithOne("Cart")
-                        .HasForeignKey("Amarket.Cart", "UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
                     b.Navigation("Products");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Amarket.Order", b =>
@@ -521,8 +508,6 @@ namespace ecommerceRestApi.Migrations
 
             modelBuilder.Entity("Amarket.User", b =>
                 {
-                    b.Navigation("Cart");
-
                     b.Navigation("Order");
                 });
 #pragma warning restore 612, 618

@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\ProductVideo\**" />
+    <Content Remove="wwwroot\ProductVideo\**" />
+    <EmbeddedResource Remove="wwwroot\ProductVideo\**" />
+    <None Remove="wwwroot\ProductVideo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\js\popover.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="3.2.0-preview3.20168.3" />
   </ItemGroup>
 
@@ -13,8 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\ProductVideo\" />
     <Folder Include="wwwroot\ProductImage\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Shared\MainLayout.razor" />
+    <None Include="Shared\NavMenu.razor" />
   </ItemGroup>
 
 </Project>

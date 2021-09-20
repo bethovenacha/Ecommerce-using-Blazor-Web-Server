@@ -90,35 +90,35 @@ using ECOMMERCE.Pages;
 #nullable disable
 #nullable restore
 #line 12 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
-using ECOMMERCE.Shared;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 13 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
 using Amarket;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 14 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
+#line 13 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 15 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
+#line 14 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
 using Microsoft.AspNetCore.Components;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 16 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
+#line 15 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
 using ECOMMERCE.States;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\_Imports.razor"
+using ECOMMERCE.Shared;
 
 #line default
 #line hidden
@@ -131,47 +131,38 @@ using ECOMMERCE.States;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 11 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\States\CascadingAppStateProvider.razor"
+#line 10 "C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\States\CascadingAppStateProvider.razor"
        
-
     [Parameter]
     public RenderFragment ChildContent { get; set; }
 
     public CartState cartState { get; set; } = new CartState();
     bool hasLoaded;
 
+
+
     public async Task SaveChangesAsync()
     {
-        await localStorage.SetAsync(cartState.key, cartState.CartId);
-        await localStorage.SetAsync("mainCart", cartState.Cart);
+        await localStorage.SetAsync("CartId", cartState.CartId);
+       
     }
 
-    protected override  Task OnInitializedAsync()
+    protected override Task OnInitializedAsync()
     {
         return SaveChangesAsync();
     }
 
     protected override async Task OnParametersSetAsync()
     {
-        var result = await localStorage.GetAsync<Guid>(cartState.key);
+        var result = await localStorage.GetAsync<Guid>("CartId");
 
         if (result.Success)
         {
             cartState.SetCartId(this, result.Value);
 
         }
-
-        var mainCart = await localStorage.GetAsync<List<Cart>>("mainCart");
-       
-        if (mainCart.Success) {
-            cartState.SetCart(this, mainCart.Value);
-        }
         hasLoaded = true;
     }
-
-
-
-
 
 #line default
 #line hidden

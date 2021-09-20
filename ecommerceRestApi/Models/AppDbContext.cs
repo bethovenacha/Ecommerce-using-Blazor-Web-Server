@@ -89,16 +89,7 @@ namespace ecommerceRestApi.Models
             modelBuilder.Entity<ProductImage>()
                .Property(i => i.ProductId).HasColumnType("uniqueidentifier").IsRequired(true);
             modelBuilder.Entity<ProductImage>().HasIndex("ProductId").IsUnique(false);
-            //USER TO CART
-            modelBuilder.Entity<User>()
-                .HasOne(u => u.Cart)
-                .WithOne(c => c.User)
-                .HasForeignKey<Cart>(c=>c.UserId)
-                .HasPrincipalKey<User>(u => u.Id)
-                .OnDelete(DeleteBehavior.NoAction);
-            modelBuilder.Entity<Cart>()
-               .Property(cart=>cart.UserId).HasColumnType("uniqueidentifier").IsRequired(true);
-            modelBuilder.Entity<Cart>().HasIndex("UserId").IsUnique(false);
+           
             //Cart to Products
             modelBuilder.Entity<Product>()
                 .HasOne(p => p.Cart)
