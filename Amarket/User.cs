@@ -16,7 +16,6 @@ namespace Amarket
         public string DeliveryNotes { get; set; }
 
       
-        public Cart Cart { get; set; }
 
         public Order Order { get; set; }
 

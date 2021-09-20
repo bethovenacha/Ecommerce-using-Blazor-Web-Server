@@ -1,7 +1,6 @@
-﻿
-@inject ProtectedLocalStorage localStorage
+﻿@inject ProtectedLocalStorage localStorage
 
-@if (hasLoaded)
+@if (@hasLoaded)
 {
     <CascadingValue Value="@this">
         @ChildContent
@@ -9,43 +8,34 @@
 }
 
 @code {
-
     [Parameter]
     public RenderFragment ChildContent { get; set; }
 
     public CartState cartState { get; set; } = new CartState();
     bool hasLoaded;
 
+
+
     public async Task SaveChangesAsync()
     {
-        await localStorage.SetAsync(cartState.key, cartState.CartId);
-        await localStorage.SetAsync("mainCart", cartState.Cart);
+        await localStorage.SetAsync("CartId", cartState.CartId);
+       
     }
 
-    protected override  Task OnInitializedAsync()
+    protected override Task OnInitializedAsync()
     {
         return SaveChangesAsync();
     }
 
     protected override async Task OnParametersSetAsync()
     {
-        var result = await localStorage.GetAsync<Guid>(cartState.key);
+        var result = await localStorage.GetAsync<Guid>("CartId");
 
         if (result.Success)
         {
             cartState.SetCartId(this, result.Value);
 
         }
-
-        var mainCart = await localStorage.GetAsync<List<Cart>>("mainCart");
-       
-        if (mainCart.Success) {
-            cartState.SetCart(this, mainCart.Value);
-        }
         hasLoaded = true;
     }
-
-
-
-
 }

@@ -1,23 +1,25 @@
-﻿@page "/cart/{id}"
-@page "/cart"
+﻿@page "/cart"
 @inherits CartViewBase
 
 
 <div class="row">
     <div class="col-12">
         <h5 class="float-start">Cart</h5>
-        <a href="#" class="btn btn-danger btn-sm float-end">Checkout</a>
+       
     </div>
 </div>
 
 <div class="row">
 
-    <div class="col-12">
-
-        @if (State.cartState.Cart.Count > 0 && State.cartState.Cart != null)
+    <div class="col-lg-4">
+        @if (Cart == null)
         {
-            <table class="table-bordered table-responsive table-primary table-striped">
-                <thead>
+            <div>Loading..</div>
+        }
+        else
+        {
+            <table class="table-bordered table-responsive">
+                <thead class="bg-success">
                     <tr>
                         <th>Product Name</th>
                         <th>Price</th>
@@ -27,7 +29,7 @@
                         <th colspan="2">Action</th>
                     </tr>
                 </thead>
-                @foreach (var c in State.cartState.Cart)
+                @foreach (var c in Cart)
                 {
                     <tbody>
                         <tr>
@@ -37,10 +39,10 @@
                             <td> @c.Tax </td>
                             <td>
                                 <input type="number" value="@c.Quantity" min="1" max="100" />
-                            </td> 
+                            </td>
                             <td>
-                                @*@onclick="()=> deleteProduct(c.Id)"*@
-                                <button type="button" class="btn btn-outline-danger btn-sm" id="@c.Id" @ref="ReferedCart" @onclick="returnId">Delete</button>
+
+                                <button type="button" class="btn btn-outline-danger btn-sm carts" id="@c.Id" @ref="ReferedCart" @onclick="deleteCart">Delete</button>
                             </td>
                             <td>
                                 <button class="btn btn-success btn-sm">Update</button>
@@ -48,16 +50,57 @@
                         </tr>
                     </tbody>
                 }
-
-
-
             </table>
         }
-        else
-        {
-            <h5>No products added yet. </h5>
-        }
+
     </div>
+    <div class="col-lg-4">
+        <form class="form-control bg-light">
+            <label class="form-label" for="firstName">First Name: </label>
+            <input class="form-control" id="firstName" />
+            <label class="form-label" for="mi">Middle Initial: </label>
+            <input class="form-control" id="mi" />
+            <label class="form-label" for="lastname" >Last Name: </label>
+            <input class="form-control" id="lastname" />
+            <label class="form-label" for="address">Address</label>
+            <input type="text" class="form-control" id="address" /><br />
+            <label class="form-label" for="contact">Contact Number:</label>
+            <input class="form-control" max="13" min="0" id="contact" /><br />
+            <label class="form-label" for="notes">Notes: </label><br />
+            <input type="text"  id="notes" />
+        </form>
+    </div>
+    <div class="col-lg-4">
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+            <label class="form-check-label" for="flexRadioDefault1">
+                Cash on Delivery
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+                Paypal
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+            <label class="form-check-label" for="flexRadioDefault3">
+                Bank Transfer
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+            <label class="form-check-label" for="flexRadioDefault4">
+                Issue Check
+            </label>
+        </div>
+
+        <button class="btn-danger btn-lg">Checkout</button>
+
+    </div>
+
 </div>
 
 

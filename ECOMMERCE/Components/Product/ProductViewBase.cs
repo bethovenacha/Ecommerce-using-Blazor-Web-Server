@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ECOMMERCE.Components.Product
 {
-    public class ProductViewBase : ComponentBase, IDisposable
+    public class ProductViewBase : ComponentBase
     {
         [Inject]
         public Iproduct iProduct { get; set; }
@@ -18,73 +18,42 @@ namespace ECOMMERCE.Components.Product
         public Icart ICart { get; set; }
         [Inject]
         public ProtectedLocalStorage ProtectedLocalStore { get; set; }
-        [Inject]
-                
-        [CascadingParameter]
-        public static CascadingAppStateProvider State { get; set; } = new CascadingAppStateProvider();
-
-        //public AppState cartState { get; set; }
+    
         [Parameter]
         public string Id { get; set; }//product id from the query string
         public List<Amarket.Product> product { get; set; } = new List<Amarket.Product>();
 
-        public Guid cartId { get; set; } = Guid.Empty;
-
-        public string ViewCartStyle { get; set; } = "";
-
         [Inject]
         public NavigationManager NavManager { get; set; }
         protected override async Task OnInitializedAsync()
-        {
-            product = (List<Amarket.Product>)await iProduct.retrieveById(Guid.Parse(Id));            
-            State.cartState.StateChanged += async (Source, property) => await CartState_StateChanged(Source, property);
-            ViewCartStyle = "display:none;";
-        }
-
-        private async Task CartState_StateChanged(ComponentBase source, object property) {
-            if (source != this) {
-                await InvokeAsync(StateHasChanged);
-            }
-            await State.SaveChangesAsync();
+        {      
+            product = (List<Amarket.Product>)await iProduct.retrieveById(Guid.Parse(Id));
         }
         protected async Task<Amarket.Cart> createCart()
         {
-            var id = await ProtectedLocalStore.GetAsync<Guid>("CartId");
-            cartId = id.Value;
-
-                Amarket.Cart cart = new Amarket.Cart()
+            var result = await ProtectedLocalStore.GetAsync<Guid>("CartId");
+            Amarket.Cart cart = null;
+            if (result.Success) {
+                cart = new Amarket.Cart()
                 {
                     Id = Guid.NewGuid(),
-                    CartId = id.Value,
+                    CartId = result.Value,
                     Tax = 0,
                     ShipmentFee = 0,
                     Price = product[0].Price,
                     Total = product[0].Price,
                     ProductId = product[0].Id,
-                    Quantity = 1,
-                    UserId = Guid.Parse("160c3fad-0479-4e35-9cd9-06427c4bc9e2")
+                    Quantity = 1
                 };
-
-            ViewCartStyle = "display: inline-block;";
-
-            return await ICart.create(cart);  
-        }
-
-        protected async Task ViewCart() {
-            var id = await ProtectedLocalStore.GetAsync<Guid>("CartId");
-            if (id.Success) {
-                NavManager.NavigateTo($"cart/{id.Value}");
+                
             }
-            
+            return await ICart.create(cart);
         }
 
-        public void Dispose()
-        {
-           
-            State.cartState.StateChanged -= async (Source, property) => await CartState_StateChanged(Source, property);
+        protected void ViewCart() {
+            NavManager.NavigateTo($"cart");
+
         }
-
-
 
     }
 }

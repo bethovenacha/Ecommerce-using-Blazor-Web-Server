@@ -23,11 +23,12 @@ namespace ECOMMERCE.Services.Cart
             return await httpClient.PostJsonAsync<Amarket.Cart>($"api/cart",cart);
         }
 
-       
+
+
         public async Task delete(object id)
         {
              await httpClient.DeleteAsync($"api/cart/{id}");
-           
+
         }
 
         public Task<IEnumerable<Amarket.Cart>> retrieve()
@@ -46,6 +47,5 @@ namespace ECOMMERCE.Services.Cart
             throw new NotImplementedException();
         }
 
-        
     }
 }

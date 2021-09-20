@@ -2,25 +2,31 @@
 @inherits ProductListBase
 
 <div class="row">
-    @foreach (var product in Products)
+    @if (Products == null)
     {
-        <div class="col-lg-2 col-md-4 col-sm-6">
-          
+        <div>Loading...</div>
+    }
+    else
+    {
+        @foreach (var product in Products)
+        {
+            <div class="col-lg-2 col-md-4 col-sm-6">
+
                 @{
                     var image = product.Image.FirstOrDefault(i => i.ImageStatus == "Primary" && i.ProductId == product.Id);
                 }
                 <div>
-                    <img src="ProductImage/@image.ProductImagePath" class="img-fluid" alt="ProductImage" >
+                    <img src="ProductImage/@image.ProductImagePath" class="img-fluid" alt="ProductImage">
                 </div>
-
-
                 <div>
                     <h5 class="card-title">@product.Name</h5>
                     <p class="card-text">@product.ShortDescription</p>
-                    <a href="@($"product/{product.Id}")" class="btn btn-primary">View</a>
+                    <a href="@($"product/{product.Id}")" class="btn btn-success">View</a>
 
                 </div>
             </div>
-       
+
+        }
     }
+
 </div>

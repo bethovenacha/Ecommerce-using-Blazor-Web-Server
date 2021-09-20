@@ -12,5 +12,6 @@ namespace ECOMMERCE.Services.Cart
         Task<Amarket.Cart> create(Amarket.Cart cart);
         Task<Amarket.Cart> update(Amarket.Cart cart);
         Task delete(object entity);
+       
     }
 }
