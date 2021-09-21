@@ -4,63 +4,39 @@
 <div class="row">
     @if (product == null)
     {
-    <div class="spinner-border text-danger" role="status">
-        <span class="visually-hidden">Loading...</span>
-    </div>
+        <div class="spinner-border text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
     }
     else
     {
         @foreach (var prod in product)
         {
             var image = prod.Image.Where(i => i.ProductId == prod.Id).FirstOrDefault();
-            <div class="col-lg-6">
-                <div class="m-3 p-1">
-                    <img src="ProductImage/@image.ProductImagePath" class="img-fluid" alt="ProductImage" style="height:500px;width:auto;">
-                </div>
+            <div class="col-lg-8 col-md-8 col-sm-12">               
+                    <img src="ProductImage/@image.ProductImagePath" class="img-fluid" alt="ProductImage" style="height:100%;width:100%;">                
             </div>
-            <div class="col-lg-6">
-                <div class="m-3 bg-secondary text-white p-1">
-                    <div>
-                        <label class="fw-bold" for="productName">Name:</label>
-                        <label class="fw-lighter" id="productName">@prod.Name</label>
-                    </div>
-                    <div>
-                        <label class="fw-bold" for="productPrice">Price:</label>
-                        <label class="fw-lighter" id="productPrice">@prod.Price</label>
-                    </div>
-                    <div>
-                        <label class="fw-bold" for="produtsaleprice">Sale Price:</label>
-                        <label class="fw-lighter" id="produtsaleprice">@prod.SalePrice</label>
-                    </div>
-                </div>
-
-                <div class="m-3 bg-secondary text-white p-1">
-                    <div>
-                        <label class="fw-bold" for="productStatus">Status:</label>
-                        <label class="fw-lighter" id="productStatus">@prod.Status.Status</label>
-                    </div>
-                    <div>
-                        <label class="fw-bold" for="productCategory">Category:</label>
-                        <label class="fw-lighter" id="productCategory">@prod.Category.CategoryName</label>
-                    </div>
-                    <div>
-                        <label class="fw-bold" for="productSubCategory">Sub Category:</label>
-                        <label class="fw-lighter" id="productSubCategory">@prod.ProductSubCategory.SubCategoryName</label>
-                    </div>
-                </div>
-                <div class="m-3 bg-secondary text-white p-1">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="bg-light btn-group-vertical">
+                    <label class="fw-bold" for="productName">Name:</label>
+                    <label class="fw-lighter" id="productName">@prod.Name</label>
+                    <label class="fw-bold" for="productPrice">Price:</label>
+                    <label class="fw-lighter" id="productPrice">@prod.Price</label>
+                    <label class="fw-bold" for="produtsaleprice">Sale Price:</label>
+                    <label class="fw-lighter" id="produtsaleprice">@prod.SalePrice</label>
+                    <label class="fw-bold" for="productStatus">Status:</label>
+                    <label class="fw-lighter" id="productStatus">@prod.Status.Status</label>
+                    <label class="fw-bold" for="productCategory">Category:</label>
+                    <label class="fw-lighter" id="productCategory">@prod.Category.CategoryName</label>
+                    <label class="fw-bold" for="productSubCategory">Sub Category:</label>
+                    <label class="fw-lighter" id="productSubCategory">@prod.ProductSubCategory.SubCategoryName</label>
                     <label class="fw-bold" for="Description">Description:</label>
                     <p id="Description">@prod.LongDescription</p>
-                </div>
-                <div class="m-3 bg-dark text-white p-2">
                     <a href="/" class="btn btn-success btn-sm d-inline-block">Back</a><br />
                     <button type="button" class="btn btn-danger btn-sm d-inline-block" @onclick="createCart">Add To Cart</button><br />
-                    <button type="button" class="btn btn-success btn-sm" @onclick="ViewCart">View Cart</button>
-                    
+                    <button type="button" class="btn btn-success btn-sm" @onmousedown="ViewCart" @bind-style="viewCartStyle" @bind-style:event="onclick">View Cart</button>
                 </div>
-
             </div>
-
         }
     }
 
