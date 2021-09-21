@@ -10,9 +10,9 @@ C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\Amarket\obj\Debug\
 C:\Users\Ivy Acha\Desktop\localCopy\Amarket\bin\Debug\netcoreapp3.1\Amarket.deps.json
 C:\Users\Ivy Acha\Desktop\localCopy\Amarket\bin\Debug\netcoreapp3.1\Amarket.dll
 C:\Users\Ivy Acha\Desktop\localCopy\Amarket\bin\Debug\netcoreapp3.1\Amarket.pdb
+C:\Users\Ivy Acha\Desktop\localCopy\Amarket\obj\Debug\netcoreapp3.1\Amarket.csproj.AssemblyReference.cache
 C:\Users\Ivy Acha\Desktop\localCopy\Amarket\obj\Debug\netcoreapp3.1\Amarket.AssemblyInfoInputs.cache
 C:\Users\Ivy Acha\Desktop\localCopy\Amarket\obj\Debug\netcoreapp3.1\Amarket.AssemblyInfo.cs
 C:\Users\Ivy Acha\Desktop\localCopy\Amarket\obj\Debug\netcoreapp3.1\Amarket.csproj.CoreCompileInputs.cache
 C:\Users\Ivy Acha\Desktop\localCopy\Amarket\obj\Debug\netcoreapp3.1\Amarket.dll
 C:\Users\Ivy Acha\Desktop\localCopy\Amarket\obj\Debug\netcoreapp3.1\Amarket.pdb
-C:\Users\Ivy Acha\Desktop\localCopy\Amarket\obj\Debug\netcoreapp3.1\Amarket.csproj.AssemblyReference.cache
