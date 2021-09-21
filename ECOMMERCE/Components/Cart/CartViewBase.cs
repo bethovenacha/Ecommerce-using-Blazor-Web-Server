@@ -66,5 +66,8 @@ namespace ECOMMERCE.Components.Cart
             
         }
 
+        public void backToShop() {
+            NavManager.NavigateTo("/");
+        }  
     }
 }

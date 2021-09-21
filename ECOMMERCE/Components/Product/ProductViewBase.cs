@@ -25,6 +25,9 @@ namespace ECOMMERCE.Components.Product
 
         [Inject]
         public NavigationManager NavManager { get; set; }
+
+        public string viewCartStyle { get; set; } = "display:none;";
+
         protected override async Task OnInitializedAsync()
         {      
             product = (List<Amarket.Product>)await iProduct.retrieveById(Guid.Parse(Id));
@@ -45,7 +48,7 @@ namespace ECOMMERCE.Components.Product
                     ProductId = product[0].Id,
                     Quantity = 1
                 };
-                
+                viewCartStyle = "display:inline;";
             }
             return await ICart.create(cart);
         }
