@@ -152,6 +152,7 @@ C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\
 C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\Components\Product\ProductList.razor.g.cs
 C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\Components\Product\ProductView.razor.g.cs
 C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
+C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\Shared\FilterMenu.razor.g.cs
 C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\States\CascadingAppStateProvider.razor.g.cs
 C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
 C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -166,6 +167,7 @@ C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\Razor\Components\
 C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\Razor\Components\Product\ProductList.razor.g.cs
 C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\Razor\Components\Product\ProductView.razor.g.cs
 C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
+C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\Razor\Shared\FilterMenu.razor.g.cs
 C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\Razor\States\CascadingAppStateProvider.razor.g.cs
 C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 C:\Users\Ivy Acha\Desktop\localCopy\ECOMMERCE\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
