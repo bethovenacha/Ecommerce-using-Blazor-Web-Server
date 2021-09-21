@@ -120,15 +120,15 @@ namespace ecommerceRestApi.Models
               .Property(i => i.CartId).HasColumnType("uniqueidentifier").IsRequired(true);
             modelBuilder.Entity<Order>().HasIndex("CartId").IsUnique(true);//one order has a unique card id
             //Order to paymentOptions
-            modelBuilder.Entity<Order>()
-                .HasOne(o => o.PaymentOption)
-                .WithOne(p => p.Order)
-                .HasForeignKey<Order>(o => o.PaymentOptionId)
-                .HasPrincipalKey<PaymentOption>(po => po.Id)
-                .OnDelete(DeleteBehavior.NoAction);
-            modelBuilder.Entity<Order>()
-              .Property(i => i.PaymentOptionId).HasColumnType("uniqueidentifier").IsRequired(true);
-            modelBuilder.Entity<Order>().HasIndex("PaymentOptionId").IsUnique(false);
+            //modelBuilder.Entity<Order>()
+            //    .HasOne(o => o.PaymentOption)
+            //    .WithOne(p => p.Order)
+            //    .HasForeignKey<Order>(o => o.PaymentOptionId)
+            //    .HasPrincipalKey<PaymentOption>(po => po.Id)
+            //    .OnDelete(DeleteBehavior.NoAction);
+            //modelBuilder.Entity<Order>()
+            //  .Property(i => i.PaymentOptionId).HasColumnType("uniqueidentifier").IsRequired(true);
+            //modelBuilder.Entity<Order>().HasIndex("PaymentOptionId").IsUnique(false);
             //Order to OrderStatus
 
             modelBuilder.Entity<Order>()

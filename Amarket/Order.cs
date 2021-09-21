@@ -17,8 +17,8 @@ namespace Amarket
         public Guid StatusId { get; set; }
         public OrderStatus Status { get; set; }
 
-        public Guid PaymentOptionId { get; set; }
-        public PaymentOption PaymentOption { get; set; }    
+        //public Guid PaymentOptionId { get; set; }
+        //public PaymentOption PaymentOption { get; set; }    
         
 
     }

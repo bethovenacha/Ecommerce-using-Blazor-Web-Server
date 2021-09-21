@@ -68,6 +68,11 @@ C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ecommerceRestApi\o
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.dll
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.pdb
 C:\Users\Ivy Acha\Desktop\digoy\PORTFOLIO\ECOMMERCE\ECOMMERCE\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.genruntimeconfig.cache
+C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.csproj.AssemblyReference.cache
+C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.AssemblyInfoInputs.cache
+C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.AssemblyInfo.cs
+C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.csproj.CoreCompileInputs.cache
+C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\bin\Debug\netcoreapp3.1\ecommerceRestApi.exe
@@ -125,11 +130,6 @@ C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\bin\Debug\netcoreapp3.1\run
 C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\bin\Debug\netcoreapp3.1\Amarket.dll
 C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\bin\Debug\netcoreapp3.1\Amarket.pdb
-C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.csproj.AssemblyReference.cache
-C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.AssemblyInfoInputs.cache
-C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.AssemblyInfo.cs
-C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.csproj.CoreCompileInputs.cache
-C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\ecommerceRestApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\staticwebassets\ecommerceRestApi.StaticWebAssets.Manifest.cache
 C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\staticwebassets\ecommerceRestApi.StaticWebAssets.xml
 C:\Users\Ivy Acha\Desktop\localCopy\ecommerceRestApi\obj\Debug\netcoreapp3.1\scopedcss\bundle\ecommerceRestApi.styles.css
